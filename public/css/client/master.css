@@ -1,0 +1,271 @@
+html{
+	margin: 0;
+	padding: 0;
+}
+
+
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 400;
+}
+
+nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	box-sizing: border-box;
+	transition: .3s;
+	z-index: 1000;
+	/*background: transparent;*/
+}
+
+.black{
+	background: black;
+	height: 60px;
+	box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+}
+
+.logo{
+	float: left;
+	margin-left: 24px;
+}
+
+.logo a{
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 18px;
+	text-decoration: none;
+	line-height: 60px;
+}
+
+nav ul{
+	list-style: none;
+	float: right;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li:not(:first-child){
+	margin-left: 60px;
+}
+
+nav ul li:last-child{
+	margin-right: 24px;
+}
+
+nav ul li a{
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 60px;
+	display: block;
+}
+
+nav ul li a:hover{
+	color: #f89406;
+	transition: .3s;
+}
+
+nav .search-form{
+	height: 100%;
+	display: inline-flex;
+	float: left;
+	margin-left: 30px;
+}
+
+nav .search-form .search-wrapper{
+	height: 100%;
+	display: inline-flex;
+	float: left;
+	margin-right: 30px;
+}
+
+nav .search-form .search-wrapper .search-box{
+	display: inline-flex;
+	width: 300px;
+	height: 40px;
+	border-radius: 40px;
+	background: #f89406;
+	margin: auto 0;
+}
+
+nav .search-form .search-wrapper .search-box input{
+	background: none;
+	border: none;
+	outline: none;
+	margin: auto 20px;
+	font-size: 16px;
+	width: 240px;
+}
+
+nav .search-form .search-wrapper .search-box .search-btn{
+	margin: auto -20px;
+	color: black;
+	background: none;
+	border: none;
+	height: 40px;
+	width: 40px;
+}
+
+.hidden{
+	display: none;
+}
+
+#nav:checked + .nav-btn{
+	transform: rotate(45deg);
+}
+
+#nav:checked + .nav-btn i{
+	background: #000;
+	transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav-btn i:nth-child(1){
+	transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav-btn i:nth-child(2){
+	opacity: 0;
+}
+
+#nav:checked + .nav-btn i:nth-child(3){
+	transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav-wrapper{
+	z-index: 999;
+	opacity: 1;
+}
+
+#nav:checked ~ .nav-wrapper ul li a{
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.footer {
+	width: 100%;
+	height: 25vh;
+	background: black;
+	margin-top: 100px;
+}
+
+@media screen and (max-width: 768px){
+	.logo{
+		padding: 0;
+	}
+
+	.nav-wrapper{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		background: #fff;
+		opacity: 0;
+		transition: all 0.2s ease;
+	}
+
+	.nav-wrapper ul{
+		display: block;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+	}
+
+	.nav-wrapper ul li{
+		display: block;
+		width: 100%;
+		text-align: right;
+		margin-bottom: 20px;
+		padding-right: 10px;
+	}
+
+	.nav-wrapper ul li:nth-child(1) a{
+		transition-delay: 0.2s;
+	}
+
+	.nav-wrapper ul li:nth-child(2) a{
+		transition-delay: 0.3s;
+	}
+
+	.nav-wrapper ul li:nth-child(3) a{
+		transition-delay: 0.4s;
+	}
+
+	.nav-wrapper ul li:not(:first-child){
+		margin-left: 0;
+	}
+
+	.nav-wrapper ul li a{
+		padding: 10px 24px;
+		opacity: 0;
+		color: #000;
+		font-size: 14px;
+		font-weight: 600;
+		letter-spacing: 1.2px;
+		transform: translateX(-20px);
+		transition: all 0.2s ease; 
+	}
+
+	.nav-btn{
+		position: fixed;
+		right: 10px;
+		top:  10px;
+		display: block;
+		width: 48px;
+		height: 48px;
+		cursor: pointer;
+		z-index: 9999;
+		border-radius: 50%;
+	}
+
+	.nav-btn i{
+		display: block;
+		width: 20px;
+		height: 2px;
+		background: #fff;
+		border-radius: 2px;
+		margin-left: 14px;
+	}
+
+	.nav-btn i:nth-child(1){
+		margin-top: 16px;
+	}
+
+	.nav-btn i:nth-child(2){
+		margin-top: 4px;
+		opacity: 1;
+	}
+	.nav-btn i:nth-child(3){
+		margin-top: 4px;
+	}
+
+	nav .search-form .search-wrapper .search-box{
+		display: inline-flex;
+		width: 240px;
+		height: 40px;
+		border-radius: 40px;
+		background: #f89406;
+		margin: auto 0;
+	}
+
+	nav .search-form .search-wrapper .search-box input{
+		background: none;
+		border: none;
+		outline: none;
+		margin: auto 20px;
+		font-size: 16px;
+		width: 180px;
+	}
+}
